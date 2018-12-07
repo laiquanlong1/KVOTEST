@@ -55,7 +55,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     static int a;
+    [_p willChangeValueForKey:NSStringFromSelector(@selector(name))];
     _p.name = [NSString stringWithFormat:@"%@",@(a++)];
+    [_p didChangeValueForKey:NSStringFromSelector(@selector(name))];
 }
 
 
